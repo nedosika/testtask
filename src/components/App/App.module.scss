@@ -12,6 +12,11 @@ h1 {
   line-height: 34px;
 }
 
+h2 {
+  font-size: 24px;
+  line-height: 29px;
+}
+
 p {
   font-size: 16px;
   line-height: 24px;
@@ -101,7 +106,7 @@ button {
 
     h2{
       padding-top: 77px;
-      padding-bottom: 35px;
+      padding-bottom: 36px;
       font-size: 30px;
 
       letter-spacing: -0.3px;
@@ -117,9 +122,8 @@ button {
     p {
       padding-left: 15px;
       padding-bottom: 24px;
-      padding-right: 15px;
-      letter-spacing: -0.2px;
-      word-spacing: 0.6px;
+      padding-right: 16px;
+      word-spacing: -0.7px;
       text-align: justify;
     }
 
@@ -138,6 +142,10 @@ button {
     button:hover{
       color: #d24335;
     }
+  }
+
+  .users{
+
   }
 }
 
