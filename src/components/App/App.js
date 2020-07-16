@@ -30,13 +30,35 @@ function App() {
             </section>
             <sectiopn className={styles.users}>
                 <h2>Our cheerful users</h2>
-                <p>Attention! Sorting users by registration date</p>
-                <img src={user1} alt={"user"}/>
-                <div className={styles.info}>
-                    <h3>Maximillian</h3>
-                    <p>Leading specialist of the Control Department<br/>
-                    controldepartment@gmail<br/>
-                    +380 50 678 03 24</p>
+                <p className={styles.message}>Attention! Sorting users by registration date</p>
+                <div className={styles.userList}>
+                    <div className={styles.user}>
+                        <img src={user1} alt={"user"}/>
+                        <div className={styles.info}>
+                            <p className={styles.name}>Maximillian</p>
+                            <p className={styles.details}>Leading specialist of the Control Department<br/>
+                            controldepartment@gmail<br/>
+                            +380 50 678 03 24</p>
+                        </div>
+                    </div>
+                    <div className={styles.user}>
+                        <img src={user1} alt={"user"}/>
+                        <div className={styles.info}>
+                            <p className={styles.name}>Adolph Blaine Charles David Earl Matthew Matthew</p>
+                            <p className={styles.details}>Contextual advertizing specialist<br/>
+                                adolph.blainecharles@...<br/>
+                                +380 50 678 03 24</p>
+                        </div>
+                    </div>
+                    <div className={styles.user}>
+                        <img src={user1} alt={"user"}/>
+                        <div className={styles.info}>
+                            <p className={styles.name}>Elizabeth</p>
+                            <p className={styles.details}>Frontend developer<br/>
+                                controldepartment@gmail<br/>
+                                +380 50 678 03 24</p>
+                        </div>
+                    </div>
                 </div>
             </sectiopn>
         </div>

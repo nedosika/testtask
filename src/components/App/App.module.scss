@@ -103,9 +103,9 @@ button {
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 938px;
+    height: 861px;
 
-    h2{
+    h2 {
       padding-top: 77px;
       padding-bottom: 36px;
       font-size: 30px;
@@ -114,7 +114,7 @@ button {
       word-spacing: 0.5px;
     }
 
-    h3{
+    h3 {
       padding-top: 38px;
       padding-bottom: 22px;
       font-size: 24px;
@@ -128,11 +128,11 @@ button {
       text-align: justify;
     }
 
-    img{
+    img {
       width: 289px;
     }
 
-    button{
+    button {
       color: #ef5b4c;
       padding: 9px 58px;
       font-weight: bold;
@@ -140,33 +140,52 @@ button {
       word-spacing: 0.1px;
     }
 
-    button:hover{
+    button:hover {
       color: #d24335;
     }
   }
 
-  .users{
+  .users {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 77px;
 
-    h2{
+    h2 {
       font-size: 30px;
     }
 
-    h3{
-      font-size: 24px;
-    }
-
-    p{
+    .message {
       margin: 12px;
     }
-    img{
-      margin: 24px 0px 18px 0px;
-    }
-    .info{
-      text-align: center;
-      padding: 0 50px;
+
+    .userList {
+      .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 12px;
+
+        img {
+          margin: 24px 0px 0px 0px;
+        }
+
+        .info {
+          text-align: center;
+          padding: 0 50px;
+
+          .name {
+            font-size: 24px;
+            line-height: 29px;
+            padding: 15px 18px 10px 18px;
+
+          }
+
+          .details {
+            padding: 0px 15px;
+          }
+        }
+      }
     }
   }
 }
