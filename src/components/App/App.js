@@ -1,22 +1,32 @@
 import React from 'react';
 import styles from './App.module.scss';
-import logo from "../../Assets/logo.svg"
-import menu from "../../Assets/menu icon.svg"
+import logo from "../../Assets/logo.svg";
+import menu from "../../Assets/menu icon.svg";
+import man from "../../Assets/man-laptop-v1.svg";
 
 function App() {
     return (
         <div className={styles.wrapper}>
             <header className={styles.header}>
-                <div className={styles.logo}><img src={logo}/></div>
+                <div className={styles.logo}><img src={logo} alt={"logo"}/></div>
                 <nav className={styles.navigation}><a href={"#"}><img src={menu}/></a></nav>
             </header>
-            <div className={styles.banner}>
+            <section className={styles.banner}>
                 <div>
                     <h1 className={styles.title}>Test assignment for Frontend Developer position</h1>
-                    <p className={styles.content}>We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository.</p>
+                    <p className={styles.content}>We kindly remind you that your test assignment should be submitted as
+                        a link to github/bitbucket repository.</p>
                     <button>Sign up now</button>
                 </div>
-            </div>
+            </section>
+            <section className={styles.about}>
+                <h2>Let's get acquainted</h2>
+                <img src={man} alt={"about"}/>
+                <h3>I am cool frontend developer</h3>
+                <p>We will evaluate how clean your approach to writing CSS and Javascript code is. You can use any CSS and Javascript 3rd party libraries without any restriction.</p>
+                <p>If 3rd party css/javascript libraries are added to the project via bower/npm/yarn you will get bonus points. If you use any task runner (gulp/webpack) you will get bonus points as well. Slice service directory page PSD mockup​in to HTML5/CSS3.</p>
+                <button>Sign up now</button>
+            </section>
         </div>
     );
 }
