@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import logo from "../../Assets/logo.svg";
 import menu from "../../Assets/menu icon.svg";
 import man from "../../Assets/man-laptop-v1.svg";
+import user1 from "../../Assets/photo-cover.png"
 
 function App() {
     return (
@@ -30,11 +31,13 @@ function App() {
             <sectiopn className={styles.users}>
                 <h2>Our cheerful users</h2>
                 <p>Attention! Sorting users by registration date</p>
-                <img alt={"user"}/>
-                <h3>Maximilian</h3>
-                <p>Leading specialist of the Control Department</p>
-                <p>controldepartment@gmail.com</p>
-                <p>+380506780324</p>
+                <img src={user1} alt={"user"}/>
+                <div className={styles.info}>
+                    <h3>Maximillian</h3>
+                    <p>Leading specialist of the Control Department<br/>
+                    controldepartment@gmail<br/>
+                    +380 50 678 03 24</p>
+                </div>
             </sectiopn>
         </div>
     );
