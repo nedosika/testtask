@@ -119,7 +119,7 @@ function App() {
                     </div>
                 </form>
             </section>
-            <hr/>
+            <hr noshade="" size="1" color="#f4f4f4"/>
             <footer className={styles.footer}>
                 <span>&copy; abz.agency specially for the test task</span>
             </footer>
