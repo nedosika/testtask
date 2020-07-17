@@ -197,7 +197,7 @@ input {
             margin-bottom: 21px;
           }
 
-          .details{
+          .details {
             margin-top: -11px;
             margin-left: -2px;
           }
@@ -264,17 +264,28 @@ input {
         color: #a5abb0;
       }
 
+      button {
+        margin: 23px;
+        padding: 11px 61px;
+        border-radius: 4px;
+        letter-spacing: 0.2px;
+        word-spacing: 0.5px;
+        background-color: #ef5b4c;
+        color: white;
+      }
+
       .inputPosition {
         display: flex;
         flex-direction: column;
-        padding-top: 7px;
+        margin-top: 7px;
+        margin-bottom: 12px;
 
-        h3{
+        h3 {
           letter-spacing: 0.3px;
           margin-bottom: 23px;
         }
 
-        .container{
+        .container {
           display: block;
           position: relative;
           padding-left: 24px;
@@ -285,7 +296,7 @@ input {
           user-select: none;
           word-spacing: 0.5px;
 
-          input{
+          input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
@@ -294,7 +305,7 @@ input {
           }
         }
 
-        .checkMark{
+        .checkMark {
           position: absolute;
           top: 0;
           left: 0;
@@ -332,6 +343,40 @@ input {
           height: 6px;
           border-radius: 50%;
           background: white;
+        }
+      }
+
+      .file {
+        .fileLabel{
+          display: flex;
+          flex-direction: column;
+        }
+        .fileInput{
+          position: absolute;
+          opacity: 0;
+        }
+        .fileName{
+          font-size: 14px;
+          border: 1px solid #dbdbdb;
+          padding: 10px 13px;
+          border-radius: 4px 0 0 4px;
+          width: 100%;
+          line-height: 16px;
+          letter-spacing: 0.2px;
+          word-spacing: 0.4px;
+        }
+        .fileBtn{
+          font-size: 14px;
+          border: solid #dbdbdb;
+          padding: 11px 15px;
+          border-radius: 0 4px 4px 0;
+          border-width: 1px 1px 1px 0;
+          color: black;
+        }
+        .fileGroup{
+          display: flex;
+          justify-content: space-between;
+          margin-top: 12px;
         }
       }
     }

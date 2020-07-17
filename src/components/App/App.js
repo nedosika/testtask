@@ -101,6 +101,20 @@ function App() {
                             <span className={styles.checkMark}></span>
                         </label>
                     </div>
+                    <div className={styles.file}>
+                        <label className={styles.fileLabel}>Photo
+                            <input className={styles.fileInput} type="file" name="resume"/>
+                            <div className={styles.fileGroup}>
+                                <span className={styles.fileName}>
+                                    Upload your photo
+                                </span>
+                                <span className={styles.fileBtn}>
+                                    Browse
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                    <button>Sign up now</button>
                 </form>
             </section>
         </div>
