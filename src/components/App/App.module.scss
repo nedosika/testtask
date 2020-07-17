@@ -352,8 +352,7 @@ input {
           flex-direction: column;
         }
         .fileInput{
-          position: absolute;
-          opacity: 0;
+          display: none;
         }
         .fileName{
           font-size: 14px;
@@ -377,6 +376,7 @@ input {
           display: flex;
           justify-content: space-between;
           margin-top: 12px;
+          cursor: pointer;
         }
       }
     }
