@@ -80,7 +80,27 @@ function App() {
                     </label>
                     <label>Phone number
                         <input type={"phone"} placeholder="+380 XX XXX XX XX"/>
+                        <span>Enter phone number in open format</span>
                     </label>
+                    <div className={styles.inputPosition}>
+                        <h3>Select your position</h3>
+                        <label className={styles.container}>
+                            <input type="radio" name="position" value="Frontend developer"/>Frontend developer
+                            <span className={styles.checkMark}></span>
+                        </label>
+                        <label className={styles.container}>
+                            <input type="radio" name="position" value="Backend developer"/>Backend developer
+                            <span className={styles.checkMark}></span>
+                        </label>
+                        <label className={styles.container}>
+                            <input type="radio" name="position" value="Designer"/>Designer
+                            <span className={styles.checkMark}></span>
+                        </label>
+                        <label className={styles.container}>
+                            <input type="radio" name="position" value="QA"/>QA
+                            <span className={styles.checkMark}></span>
+                        </label>
+                    </div>
                 </form>
             </section>
         </div>

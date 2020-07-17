@@ -235,8 +235,8 @@ input {
       margin-top: 13px;
       font-size: 14px;
 
-      label{
-        padding-bottom: 26px;
+      label {
+        padding-bottom: 20px;
         word-spacing: 1px;
         letter-spacing: 0.2px;
       }
@@ -244,12 +244,85 @@ input {
       input {
         width: 100%;
         margin-top: 12px;
+        margin-bottom: 6px;
         border: 1px solid #ced4da;
         padding: 10px 10px 9px 12px;
         box-sizing: border-box;
         border-radius: 4px;
         font-size: 15px;
         letter-spacing: 0.2px;
+      }
+
+      span {
+        font-size: 10px;
+        color: #a5abb0;
+      }
+
+      .inputPosition {
+        display: flex;
+        flex-direction: column;
+        padding-top: 7px;
+
+        h3{
+          letter-spacing: 0.3px;
+          margin-bottom: 23px;
+        }
+
+        .container{
+          display: block;
+          position: relative;
+          padding-left: 24px;
+          padding-bottom: 14px;
+          cursor: pointer;
+          font-size: 16px;
+          letter-spacing: -0.9px;
+          user-select: none;
+
+          input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+        }
+        .checkMark{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          background-color: #eee;
+        }
+
+        .container:hover input ~ .checkMark {
+          background-color: #ccc;
+        }
+
+        .container input:checked ~ .checkMark {
+          background-color: #007bff;
+          border: none;
+        }
+
+        .checkMark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+        .container input:checked ~ .checkMark:after {
+          display: block;
+        }
+
+        .container .checkMark:after {
+          top: 5px;
+          left: 5px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: white;
+        }
       }
     }
 
