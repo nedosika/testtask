@@ -60,6 +60,7 @@ function App() {
                         </div>
                     </div>
                 </div>
+                <button>Show more</button>
             </sectiopn>
         </div>
     );
