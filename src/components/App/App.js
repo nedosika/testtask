@@ -114,7 +114,9 @@ function App() {
                             </div>
                         </label>
                     </div>
-                    <button>Sign up now</button>
+                    <div className={styles.submitBtnWrapper}>
+                        <button>Sign up now</button>
+                    </div>
                 </form>
             </section>
         </div>

@@ -264,16 +264,6 @@ input {
         color: #a5abb0;
       }
 
-      button {
-        margin: 23px;
-        padding: 11px 61px;
-        border-radius: 4px;
-        letter-spacing: 0.2px;
-        word-spacing: 0.5px;
-        background-color: #ef5b4c;
-        color: white;
-      }
-
       .inputPosition {
         display: flex;
         flex-direction: column;
@@ -377,6 +367,21 @@ input {
           justify-content: space-between;
           margin-top: 12px;
           cursor: pointer;
+        }
+      }
+
+      .submitBtnWrapper{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        button {
+          padding: 12px 58px;
+          border-radius: 4px;
+          letter-spacing: 1.2px;
+          word-spacing: 0.5px;
+          background-color: #ef5b4c;
+          color: white;
         }
       }
     }
