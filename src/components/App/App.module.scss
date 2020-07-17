@@ -221,6 +221,13 @@ input {
   }
 
   .register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 79px;
+    padding: 0 15px;
+    height: 824px;
+
     h2 {
       font-size: 28.5px;
       line-height: 29px;
@@ -386,13 +393,12 @@ input {
       }
     }
 
+  }
+
+  .footer{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 79px;
-    padding: 0 15px;
-
-
+    justify-content: center;
+    margin: 19px;
   }
 }
 

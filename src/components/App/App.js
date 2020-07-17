@@ -119,6 +119,10 @@ function App() {
                     </div>
                 </form>
             </section>
+            <hr/>
+            <footer className={styles.footer}>
+                <span>&copy; abz.agency specially for the test task</span>
+            </footer>
         </div>
     );
 }
