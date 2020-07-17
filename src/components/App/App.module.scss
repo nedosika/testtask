@@ -34,6 +34,15 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
 .wrapper {
   .header {
     display: flex;
@@ -150,6 +159,8 @@ button {
     flex-direction: column;
     align-items: center;
     padding-top: 77px;
+    padding-bottom: 56px;
+    background-color: #f9f9f9;
 
     h2 {
       font-size: 30px;
@@ -201,6 +212,54 @@ button {
     button:hover {
       background-color: #d24335;
     }
+  }
+
+  .register {
+    h2 {
+      font-size: 28.5px;
+      line-height: 29px;
+      letter-spacing: 0.7px;
+      padding-left: 1px;
+    }
+
+    p {
+      padding: 21px 15px;
+      text-align: center;
+      line-height: 22px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 13px;
+      font-size: 14px;
+
+      label{
+        padding-bottom: 26px;
+        word-spacing: 1px;
+        letter-spacing: 0.2px;
+      }
+
+      input {
+        width: 100%;
+        margin-top: 12px;
+        border: 1px solid #ced4da;
+        padding: 10px 10px 9px 12px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 79px;
+    padding: 0 15px;
+
+
   }
 }
 
