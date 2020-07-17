@@ -293,7 +293,7 @@ input {
           height: 16px;
           width: 16px;
           border-radius: 50%;
-          background-color: #eee;
+          border: 1px solid #d9d2d2;
         }
 
         .container:hover input ~ .checkMark {
