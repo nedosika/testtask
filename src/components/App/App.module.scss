@@ -1,7 +1,7 @@
 $maxWidthApp: 2560px;
 $minWidthApp: 360px;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -72,7 +72,7 @@ input {
     }
 
     .logo {
-      height: 19px;
+      height: 18px;
     }
 
     .navigation {
@@ -92,12 +92,14 @@ input {
       height: 400px;
       background-image: url("../../Assets/banner-photo.jpg");
       background-size: cover;
-      background-position: top;
+      background-position: 52% 50%;
       color: white;
       text-align: center;
 
       @media screen and (min-width: 768px){
         height: 500px;
+        background-size: 133.7%;
+        background-position: left top;
       }
 
       .content {
@@ -128,6 +130,9 @@ input {
         p {
           width: 330px;
           padding: 19px 0 24px 0;
+          font-weight: 300;
+          letter-spacing: 0.3px;
+          word-spacing: 0.1px;
 
           .crop{
             display: none;
@@ -139,7 +144,7 @@ input {
           text-align: left;
 
           p{
-            width: 450px;
+            width: 455px;
             padding: 28px 0 34px 0;
 
             .crop{

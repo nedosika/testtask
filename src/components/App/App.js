@@ -21,7 +21,7 @@ const App = () => {
             <main className={styles.mainContainer}>
                 <section className={styles.banner}>
                     <div className={classes(styles.content, styles.wrapper)}>
-                        <h1>Test assignment for Frontend Developer position</h1>
+                        <h1>test assignment for Frontend Developer position</h1>
                         <p>
                             <span>We kindly remind you that your test assignment should be submitted as
                                 a link to github/bitbucket repository.
