@@ -1,0 +1,80 @@
+.wrapper {
+  height: 400px;
+  background-image: url("../../Assets/banner-photo.jpg");
+  background-size: cover;
+  background-position: 52% 50%;
+  color: white;
+  text-align: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    h1 {
+      letter-spacing: -0.3px;
+      word-spacing: 1px;
+      text-transform: uppercase;
+
+      width: 310px;
+
+      @media screen and (min-width: 768px){
+        font-size: 39px;
+        line-height: 44px;
+        width: 420px;
+        letter-spacing: 0.3px;
+        word-spacing: 0px;
+      }
+    }
+
+    p {
+      width: 330px;
+      padding: 19px 0 24px 2px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+      word-spacing: 0.1px;
+
+      .crop{
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 768px){
+      align-items: flex-start;
+      text-align: left;
+
+      p{
+        width: 455px;
+        padding: 28px 0px 34px 1px;
+
+        .crop{
+          display: inline;
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 11px 58px;
+    border-radius: 4px;
+    word-spacing: 1px;
+    background-color: #ef5b4c;
+    margin-bottom: 5px;
+  }
+
+  button:hover {
+    background-color: #d24335;
+  }
+
+  @media screen and (min-width: 768px){
+    height: 500px;
+    background-size: 133.7%;
+    background-position: left top;
+
+    button{
+      margin-bottom: 7px;
+    }
+  }
+}

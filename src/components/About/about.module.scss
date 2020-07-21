@@ -1,0 +1,45 @@
+.about {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 861px;
+
+  h2 {
+    padding-top: 77px;
+    padding-bottom: 36px;
+    font-size: 30px;
+
+    letter-spacing: -0.3px;
+    word-spacing: 0.5px;
+  }
+
+  h3 {
+    padding-top: 38px;
+    padding-bottom: 22px;
+    font-size: 24px;
+  }
+
+  p {
+    padding-left: 15px;
+    padding-bottom: 24px;
+    padding-right: 15px;
+    word-spacing: -0.7px;
+    text-align: justify;
+  }
+
+  img {
+    width: 289px;
+  }
+
+  button {
+    color: #ef5b4c;
+    padding: 9px 58px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    word-spacing: 0.1px;
+  }
+
+  button:hover {
+    color: #d24335;
+  }
+}

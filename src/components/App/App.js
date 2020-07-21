@@ -1,6 +1,5 @@
 /*Libraries*/
 import React from 'react';
-import classes from 'classnames';
 
 /*Assets*/
 import man from "../../Assets/man-laptop-v1.svg";
@@ -8,74 +7,19 @@ import photoCover from "../../Assets/photo-cover.png"
 
 /*Styles*/
 import styles from './App.module.scss';
-import Header from "../Header/Header";
+import Header from "../Header";
+import Banner from "../Banner";
+import About from "../About";
+import Users from "../Users";
 
 const App = () => {
     return (
-        <div className={styles.page}>
+        <>
             <Header className={styles.wrapper}/>
             <main className={styles.mainContainer}>
-                <section className={styles.banner}>
-                    <div className={classes(styles.content, styles.wrapper)}>
-                        <h1>test assignment for Frontend Developer position</h1>
-                        <p>
-                            <span>We kindly remind you that your test assignment should be submitted as
-                                a link to github/bitbucket repository.
-                            </span>
-                            <span className={styles.crop}> Please be patient, we consider
-                                and respond to every application that meets minimum requirements. We
-                                look forward to your submission. Good luck! The photo has to scale in
-                                the banner area on the different screens
-                            </span>
-                        </p>
-                        <button>Sign up now</button>
-                    </div>
-                </section>
-                <section className={styles.about}>
-                    <h2>Let's get acquainted</h2>
-                    <img src={man} alt={"about"}/>
-                    <h3>I am cool frontend developer</h3>
-                    <p>We will evaluate how clean your approach to writing CSS and Javascript code is. You can use any CSS
-                        and Javascript 3rd party libraries without any restriction.</p>
-                    <p>If 3rd party css/javascript libraries are added to the project via bower/npm/yarn you will get bonus
-                        points. If you use any task runner (gulp/webpack) you will get bonus points as well. Slice service
-                        directory page PSD mockup into HTML5/CSS3.</p>
-                    <button>Sign up now</button>
-                </section>
-                <sectiopn className={styles.users}>
-                    <h2>Our cheerful users</h2>
-                    <p className={styles.message}>Attention! Sorting users by registration date</p>
-                    <div className={styles.userList}>
-                        <div className={styles.user}>
-                            <img src={photoCover} alt={"user"}/>
-                            <div className={styles.info}>
-                                <p className={styles.name}>Maximillian</p>
-                                <p className={styles.details}>Leading specialist of the Control Department<br/>
-                                    controldepartment@gmail<br/>
-                                    +380 50 678 03 24</p>
-                            </div>
-                        </div>
-                        <div className={styles.user}>
-                            <img src={photoCover} alt={"user"}/>
-                            <div className={styles.info}>
-                                <p className={styles.name}>Adolph Blaine Charles David Earl Matthew Matthew</p>
-                                <p className={styles.details}>Contextual advertizing specialist<br/>
-                                    adolph.blainecharles@...<br/>
-                                    +380 50 678 03 24</p>
-                            </div>
-                        </div>
-                        <div className={styles.user}>
-                            <img src={photoCover} alt={"user"}/>
-                            <div className={styles.info}>
-                                <p className={styles.name}>Elizabeth</p>
-                                <p className={styles.details}>Frontend developer<br/>
-                                    controldepartment@gmail<br/>
-                                    +380 50 678 03 24</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button>Show more</button>
-                </sectiopn>
+                <Banner className={styles.wrapper}/>
+                <About/>
+                <Users/>
                 <section className={styles.register}>
                     <h2>Register to get a work</h2>
                     <p>
@@ -135,7 +79,7 @@ const App = () => {
             <footer className={styles.footer}>
                 <span>&copy; abz.agency specially for the test task</span>
             </footer>
-        </div>
+        </>
     );
 }
 
