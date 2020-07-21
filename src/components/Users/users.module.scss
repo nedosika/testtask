@@ -5,6 +5,7 @@
   padding-bottom: 56px;
   background-color: #f9f9f3;
 
+
   h2 {
     font-size: 30px;
     padding-top: 77px;
@@ -18,37 +19,9 @@
     width: 104%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 12px;
-
-    .user {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 18px;
-      margin-top: 3px;
-      width: 200px;
-
-      img {
-        margin: 21px 0px;
-      }
-
-      .info {
-        text-align: center;
-        margin: -6px;
-
-        .name {
-          font-size: 24px;
-          line-height: 29px;
-          margin-bottom: 21px;
-        }
-
-        .details {
-          margin-top: -11px;
-          margin-left: -2px;
-        }
-      }
-    }
   }
 
   button {
@@ -82,7 +55,7 @@
       justify-content: space-around;
       align-items: flex-start;
 
-      margin-top: 52px;
+      margin-top: 29px;
     }
   }
 }

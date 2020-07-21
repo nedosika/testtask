@@ -7,6 +7,46 @@ import photoCover from "../../Assets/photo-cover.png";
 
 /*Styles*/
 import styles from "./users.module.scss";
+import User from "./components/User";
+
+const users = [
+    {
+        name: "Maximillian",
+        position: "Leading specialist of the Control Department",
+        email: "controldepartment@gmail",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        name: "Adolph Blaine Charles David Earl Matthew Matthew",
+        position: "Contextual advertizing specialist",
+        email: "adolph.blainecharles@...",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        name: "Elizabeth",
+        position: "Frontend developer",
+        email: "elizabet.front@gmail.com",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        name: "Alexander",
+        position: "Leading specialist of the Control Department",
+        email: "controldepartment@gmail",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        name: "Noah",
+        position: "Contextual advertizing specialist",
+        email: "adolph.blainecharles@...",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        name: "Liamgrievescasey",
+        position: "Frontend developer",
+        email: "elizabet.front@gmail.com",
+        phone: "+380 50 678 03 24",
+    }
+]
 
 const Users = ({className}) => {
     return(
@@ -14,33 +54,9 @@ const Users = ({className}) => {
             <h2>Our cheerful users</h2>
             <p className={styles.message}>Attention! Sorting users by registration date</p>
             <div className={styles.userList}>
-                <div className={styles.user}>
-                    <img src={photoCover} alt={"user"}/>
-                    <div className={styles.info}>
-                        <p className={styles.name}>Maximillian</p>
-                        <p className={styles.details}>Leading specialist of the Control Department<br/>
-                            controldepartment@gmail<br/>
-                            +380 50 678 03 24</p>
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <img src={photoCover} alt={"user"}/>
-                    <div className={styles.info}>
-                        <p className={styles.name}>Adolph Blaine Charles David Earl Matthew Matthew</p>
-                        <p className={styles.details}>Contextual advertizing specialist<br/>
-                            adolph.blainecharles@...<br/>
-                            +380 50 678 03 24</p>
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <img src={photoCover} alt={"user"}/>
-                    <div className={styles.info}>
-                        <p className={styles.name}>Elizabeth</p>
-                        <p className={styles.details}>Frontend developer<br/>
-                            elizabet.front@gmail.com<br/>
-                            +380 50 678 03 24</p>
-                    </div>
-                </div>
+                {
+                    users.map(user => <User className={styles.user} user={user}/>)
+                }
             </div>
             <button>Show more</button>
         </section>
