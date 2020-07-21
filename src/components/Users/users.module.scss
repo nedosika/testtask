@@ -4,20 +4,22 @@
   align-items: center;
   padding-top: 77px;
   padding-bottom: 56px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f3;
 
   h2 {
     font-size: 30px;
   }
 
   .message {
-    margin: 12px;
+    padding-top: 12px;
   }
 
   .userList {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 12px;
 
     .user {
       display: flex;
@@ -61,5 +63,27 @@
 
   button:hover {
     background-color: #d24335;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .wrapper {
+    padding-top: 120px;
+
+    h2 {
+      font-size: 40px;
+    }
+
+    .message {
+      padding-top: 26px;
+    }
+
+    .userList{
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      margin-top: 52px;
+    }
   }
 }

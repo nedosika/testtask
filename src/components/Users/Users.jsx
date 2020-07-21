@@ -1,5 +1,6 @@
 /*Libraries*/
 import React from "react";
+import classes from "classnames";
 
 /*Assets*/
 import photoCover from "../../Assets/photo-cover.png";
@@ -7,9 +8,9 @@ import photoCover from "../../Assets/photo-cover.png";
 /*Styles*/
 import styles from "./users.module.scss";
 
-const Users = () => {
+const Users = ({className}) => {
     return(
-        <section className={styles.wrapper}>
+        <section className={classes(styles.wrapper, className)}>
             <h2>Our cheerful users</h2>
             <p className={styles.message}>Attention! Sorting users by registration date</p>
             <div className={styles.userList}>

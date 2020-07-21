@@ -19,7 +19,7 @@ const App = () => {
             <main className={styles.mainContainer}>
                 <Banner className={styles.wrapper}/>
                 <About className={styles.wrapper}/>
-                <Users/>
+                <Users className={styles.wrapper}/>
                 <Register/>
             </main>
             <hr noshade="" size="1" color="#f4f4f4"/>
