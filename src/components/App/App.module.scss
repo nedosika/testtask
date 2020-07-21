@@ -96,20 +96,12 @@ input {
       color: white;
       text-align: center;
 
-      @media screen and (min-width: 768px){
-        height: 500px;
-        background-size: 133.7%;
-        background-position: left top;
-      }
-
       .content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
-
-        //margin-left: 14px;
 
         h1 {
           letter-spacing: -0.3px;
@@ -129,7 +121,7 @@ input {
 
         p {
           width: 330px;
-          padding: 19px 0 24px 0;
+          padding: 19px 0 24px 2px;
           font-weight: 300;
           letter-spacing: 0.3px;
           word-spacing: 0.1px;
@@ -145,7 +137,7 @@ input {
 
           p{
             width: 455px;
-            padding: 28px 0 34px 0;
+            padding: 28px 0px 34px 1px;
 
             .crop{
               display: inline;
@@ -164,6 +156,16 @@ input {
 
       button:hover {
         background-color: #d24335;
+      }
+
+      @media screen and (min-width: 768px){
+        height: 500px;
+        background-size: 133.7%;
+        background-position: left top;
+
+        button{
+          margin-bottom: 7px;
+        }
       }
     }
 
