@@ -5,8 +5,8 @@ import classes from "classnames";
 import styles from "./header.module.scss";
 
 /*Styles*/
-import logo from "../../Assets/logo.svg";
-import menu from "../../Assets/menu icon.svg";
+import logo from "Assets/logo.svg";
+import menu from "Assets/menu icon.svg";
 
 const Header = ({className}) => {
     return(

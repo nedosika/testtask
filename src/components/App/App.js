@@ -2,12 +2,12 @@
 import React from 'react';
 
 /*Components*/
-import Header from "../Header";
-import Banner from "../Banner";
-import About from "../About";
-import Users from "../Users";
-import Register from "../Register";
-import Footer from "../Footer";
+import Header from "components/Header";
+import Banner from "components/Banner";
+import About from "components/About";
+import Users from "components/Users";
+import Register from "components/Register";
+import Footer from "components/Footer";
 
 /*Styles*/
 import styles from './App.module.scss';
@@ -18,7 +18,7 @@ const App = () => {
             <Header className={styles.wrapper}/>
             <main className={styles.mainContainer}>
                 <Banner className={styles.wrapper}/>
-                <About/>
+                <About className={styles.wrapper}/>
                 <Users/>
                 <Register/>
             </main>
