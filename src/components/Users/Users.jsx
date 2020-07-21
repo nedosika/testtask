@@ -1,7 +1,10 @@
+/*Libraries*/
 import React from "react";
 
+/*Assets*/
 import photoCover from "../../Assets/photo-cover.png";
 
+/*Styles*/
 import styles from "./users.module.scss";
 
 const Users = () => {

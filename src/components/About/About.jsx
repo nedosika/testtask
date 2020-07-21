@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../App/App.module.scss";
+import styles from "./about.module.scss";
 import man from "../../Assets/man-laptop-v1.svg";
 
 const About  = () => {
     return(
-        <section className={styles.about}>
+        <section className={styles.wrapper}>
             <h2>Let's get acquainted</h2>
             <img src={man} alt={"about"}/>
             <h3>I am cool frontend developer</h3>
