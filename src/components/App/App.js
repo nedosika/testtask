@@ -3,21 +3,17 @@ import React from 'react';
 import classes from 'classnames';
 
 /*Assets*/
-import logo from "../../Assets/logo.svg";
-import menu from "../../Assets/menu icon.svg";
 import man from "../../Assets/man-laptop-v1.svg";
 import photoCover from "../../Assets/photo-cover.png"
 
 /*Styles*/
 import styles from './App.module.scss';
+import Header from "../Header/Header";
 
 const App = () => {
     return (
         <div className={styles.page}>
-            <header className={classes(styles.header, styles.wrapper)}>
-                <div className={styles.logo}><img src={logo} alt={"logo"}/></div>
-                <nav className={styles.navigation}><a href={"#"}><img src={menu}/></a></nav>
-            </header>
+            <Header className={styles.wrapper}/>
             <main className={styles.mainContainer}>
                 <section className={styles.banner}>
                     <div className={classes(styles.content, styles.wrapper)}>
