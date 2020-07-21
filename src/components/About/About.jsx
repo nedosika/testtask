@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./about.module.scss";
-import man from "../../Assets/man-laptop-v1.svg";
+import man from "Assets/man-laptop-v1.svg";
 
 const About  = () => {
     return(
