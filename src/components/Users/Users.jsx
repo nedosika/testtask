@@ -37,7 +37,7 @@ const Users = ({className}) => {
                     <div className={styles.info}>
                         <p className={styles.name}>Elizabeth</p>
                         <p className={styles.details}>Frontend developer<br/>
-                            controldepartment@gmail<br/>
+                            elizabet.front@gmail.com<br/>
                             +380 50 678 03 24</p>
                     </div>
                 </div>
