@@ -51,6 +51,27 @@ const users = [
         position: "Frontend developer",
         email: "elizabet.front@gmail.com",
         phone: "+380 50 678 03 24",
+    },
+    {
+        id: 6,
+        name: "Alexander",
+        position: "Leading specialist of the Control Department",
+        email: "controldepartment@gmail",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        id: 7,
+        name: "Noah",
+        position: "Contextual advertizing specialist",
+        email: "adolph.blainecharles@...",
+        phone: "+380 50 678 03 24",
+    },
+    {
+        id: 8,
+        name: "Liamgrievescasey",
+        position: "Frontend developer",
+        email: "elizabet.front@gmail.com",
+        phone: "+380 50 678 03 24",
     }
 ]
 
@@ -68,7 +89,11 @@ const Users = ({className}) => {
             event.currentTarget.screen.width >= 768 && setCount(6);
             event.currentTarget.screen.width < 768 && setCount(3);
         });
-    }, [])
+    }, []);
+
+    const handleShowMore = () => {
+        setCount(count + 3);
+    }
 
     return(
         <section className={classes(styles.wrapper, className)}>
@@ -80,12 +105,16 @@ const Users = ({className}) => {
                         i < count &&
                         <>
                             <User user={user} key={user.id}/>
-                            {(i + 1) % 3 === 0 && <div style={{width: "100%"}}></div>}
+                            {
+                                (i + 1) % 3 === 0 && <div style={{width: "100%"}}/>
+                            }
                         </>
                     )
                 }
             </div>
-            <button>Show more</button>
+            {
+                count < users.length  && <button onClick={handleShowMore}>Show more</button>
+            }
         </section>
     );
 }
