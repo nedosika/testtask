@@ -175,5 +175,25 @@
       }
     }
   }
+}
 
+@media screen and (min-width: 768px)  {
+  .wrapper{
+    margin-top: 120px;
+    height: 906px;
+
+    h2 {
+      font-size: 38px;
+      word-spacing: 1px;
+      padding-left: 9px;
+    }
+
+    p{
+      padding: 27px 140px 21px 148px;
+    }
+    form{
+      width: 63%;
+      padding-left: 9px;
+    }
+  }
 }
