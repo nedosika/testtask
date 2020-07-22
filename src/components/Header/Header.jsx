@@ -6,15 +6,19 @@ import styles from "./header.module.scss";
 
 /*Styles*/
 import logo from "Assets/logo.svg";
-import menu from "Assets/menu icon.svg";
+
+/*Components*/
+import TopBar from "./components/TopBar";
 
 const Header = ({className}) => {
-    return(
+    return (
         <header className={classes(styles.wrapper, className)}>
-            <div className={styles.logo}><img src={logo} alt={"logo"}/></div>
-            <nav className={styles.navigation}>
-                <a href={"#"}><img src={menu} alt="menu"/></a>
-            </nav>
+            <div className={styles.logo}>
+                <a href={"#banner"}>
+                    <img src={logo} alt={"logo"}/>
+                </a>
+            </div>
+            <TopBar/>
         </header>
     );
 }

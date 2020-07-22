@@ -6,7 +6,7 @@ import man from "Assets/man-laptop-v1.svg";
 
 const About = ({className}) => {
     return (
-        <section className={classes(styles.wrapper, className)}>
+        <section className={classes(styles.wrapper, className)} id={"about"}>
             <h2>Let's get acquainted</h2>
             <div className={styles.content}>
                 <img src={man} alt={"about"}/>

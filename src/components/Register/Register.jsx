@@ -4,7 +4,7 @@ import styles from "./register.module.scss";
 
 const Register = () => {
     return(
-        <section className={styles.wrapper}>
+        <section className={styles.wrapper} id={"register"}>
             <h2>Register to get a work</h2>
             <p>
                 Attention! After successful registration and alert, update the list of users in the block from the

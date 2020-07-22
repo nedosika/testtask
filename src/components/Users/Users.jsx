@@ -96,7 +96,7 @@ const Users = ({className}) => {
     }
 
     return(
-        <section className={classes(styles.wrapper, className)}>
+        <section className={classes(styles.wrapper, className)} id={"users"}>
             <h2>Our cheerful users</h2>
             <p className={styles.message}>Attention! Sorting users by registration date</p>
             <div className={styles.userList}>

@@ -5,7 +5,7 @@ import styles from "./banner.module.scss";
 
 const Banner = ({className}) => {
     return(
-        <section className={styles.wrapper}>
+        <section className={styles.wrapper} id={"banner"}>
             <div className={classes(styles.content, className)}>
                 <h1>test assignment for Frontend Developer position</h1>
                 <p>
