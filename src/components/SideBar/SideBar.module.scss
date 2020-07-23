@@ -1,0 +1,36 @@
+.wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  width: 290px;
+
+  header{
+    display: flex;
+    align-items: center;
+
+    padding-left: 15px;
+
+    height: 40px;
+
+    a{
+      height: 19px;
+    }
+  }
+
+  hr{
+    margin: 0;
+  }
+
+  nav{
+    margin-left: 15px;
+    margin-bottom: 29px;
+
+    ul{
+      li{
+        padding-top: 27px;
+      }
+    }
+  }
+}

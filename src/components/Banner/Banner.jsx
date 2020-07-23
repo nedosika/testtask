@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "classnames";
 
-import styles from "./banner.module.scss";
+import styles from "./Banner.module.scss";
 
 const Banner = ({className}) => {
     return(

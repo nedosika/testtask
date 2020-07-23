@@ -1,18 +1,18 @@
 import React from "react";
-import classes from "classnames";
-
-/*Assets*/
-import styles from "./header.module.scss";
+import classNames  from "classnames";
 
 /*Styles*/
+import styles from "./Header.module.scss";
+
+/*Assets*/
 import logo from "Assets/logo.svg";
 
 /*Components*/
-import TopBar from "./components/TopBar";
+import TopBar from "components/TopBar";
 
 const Header = ({className, openModal}) => {
     return (
-        <header className={classes(styles.wrapper, className)}>
+        <header className={classNames(styles.wrapper, className)}>
             <div className={styles.logo}>
                 <a href={"#banner"}>
                     <img src={logo} alt={"logo"}/>
