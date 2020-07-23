@@ -2,8 +2,8 @@ import React from "react";
 /*styles*/
 import styles from "./SideBar.module.scss";
 
-/*Assets*/
-import logo from "Assets/logo.svg";
+/*assets*/
+import logo from "assets/logo.svg";
 
 const SideBar = () => {
     return (

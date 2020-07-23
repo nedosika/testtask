@@ -15,17 +15,17 @@ import SideBar from "components/SideBar";
 import styles from './App.module.scss';
 
 const App = () => {
-    const [showModal, setShowModal] = React.useState(false);
+    const ModalRef = React.useRef({});
 
     return (
         <>
-            <Header className={styles.wrapper} openModal={() => setShowModal(true)}/>
+            <Header className={styles.wrapper} onOpenModal={() => ModalRef.current.open()}/>
             <main className={styles.mainContainer}>
                 <Banner className={styles.wrapper}/>
                 <About className={styles.wrapper}/>
                 <Users className={styles.wrapper}/>
                 <Register/>
-                <Modal isOpen={showModal} close={() => setShowModal(false)}>
+                <Modal ref={ModalRef}>
                     <SideBar/>
                 </Modal>
             </main>

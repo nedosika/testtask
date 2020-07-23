@@ -4,13 +4,13 @@ import classNames  from "classnames";
 /*Styles*/
 import styles from "./Header.module.scss";
 
-/*Assets*/
-import logo from "Assets/logo.svg";
+/*assets*/
+import logo from "assets/logo.svg";
 
 /*Components*/
 import TopBar from "components/TopBar";
 
-const Header = ({className, openModal}) => {
+const Header = ({className, onOpenModal}) => {
     return (
         <header className={classNames(styles.wrapper, className)}>
             <div className={styles.logo}>
@@ -18,7 +18,7 @@ const Header = ({className, openModal}) => {
                     <img src={logo} alt={"logo"}/>
                 </a>
             </div>
-            <TopBar openModal={openModal}/>
+            <TopBar onOpenModal={onOpenModal}/>
         </header>
     );
 }

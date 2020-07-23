@@ -2,7 +2,7 @@ import React from "react";
 import classes from "classnames";
 
 import styles from "./about.module.scss";
-import man from "Assets/man-laptop-v1.svg";
+import man from "assets/man-laptop-v1.svg";
 
 const About = ({className}) => {
     return (

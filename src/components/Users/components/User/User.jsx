@@ -2,7 +2,7 @@ import React from "react";
 import classes from "classnames";
 
 import styles from "./user.module.scss";
-import photoCover from "Assets/photo-cover.png";
+import photoCover from "assets/photo-cover.png";
 
 const User = ({className, user}) => {
     return(

@@ -6,9 +6,9 @@ import Scrollchor from "react-scrollchor";
 import styles from "./topBar.module.scss";
 
 /*Components*/
-import menuIcon from "Assets/menu icon.svg";
+import menuIcon from "assets/menu icon.svg";
 
-const TopBar = ({openModal}) => {
+const TopBar = ({onOpenModal}) => {
     const [current, setCurrent] = React.useState("banner");
 
     const handleClick = (e) => {
@@ -64,7 +64,7 @@ const TopBar = ({openModal}) => {
                     </Scrollchor>
                 </li>
             </ul>
-            <button onClick={() => openModal()}><img src={menuIcon} alt="menu"/></button>
+            <button onClick={onOpenModal}><img src={menuIcon} alt="menu"/></button>
         </nav>
     );
 }

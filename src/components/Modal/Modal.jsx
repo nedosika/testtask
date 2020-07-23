@@ -2,12 +2,14 @@ import React from "react";
 
 import classes from "./styles.module.scss";
 
-const Modal = ({children, isOpen, close}) => {
-    const ModalRef = React.createRef();
+const Modal = ({children}, ref) => {
+    const [open, setOpen] = React.useState(false);
+
+    const OverlayRef = React.useRef({});
 
     const handleESC = event => {
         if (event.keyCode === 27) {
-            close();
+            setOpen(false);
         }
     };
 
@@ -15,23 +17,27 @@ const Modal = ({children, isOpen, close}) => {
         document.addEventListener("keydown", handleESC);
 
         return () => document.removeEventListener("keydown", handleESC);
-    }, [])
+    }, []);
+
+    React.useImperativeHandle(ref, () => ({
+        open: () => setOpen(true)
+    }));
+
 
     const handleMouseDown = ({target}) => {
-        if (target === ModalRef.current) {
-           close();
+        if (target === OverlayRef.current) {
+           setOpen(false);
         }
     };
 
-    return isOpen ?
+    return open &&
         <div
             className={classes.overlay}
             onMouseDown={handleMouseDown}
-            ref={ModalRef}
+            ref={OverlayRef}
         >
             {children}
-        </div> :
-        null
+        </div>
 }
 
-export default Modal;
+export default React.forwardRef(Modal);

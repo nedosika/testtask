@@ -1,6 +1,6 @@
 .wrapper {
   height: 400px;
-  background-image: url("../../Assets/banner-photo.jpg");
+  background-image: url("../../assets/banner-photo.jpg");
   background-size: cover;
   background-position: 52% 50%;
   color: white;
@@ -29,7 +29,6 @@
       letter-spacing: -0.3px;
       word-spacing: 1px;
       text-transform: uppercase;
-
       width: 310px;
     }
 
@@ -66,12 +65,12 @@
         line-height: 44px;
         width: 420px;
         letter-spacing: 0.3px;
-        word-spacing: 0px;
+        word-spacing: 0;
       }
 
       p{
         width: 455px;
-        padding: 28px 0px 34px 1px;
+        padding: 28px 0 34px 1px;
 
         .crop{
           display: inline;
@@ -95,9 +94,9 @@
       }
 
       p{
-        padding: 25px 0px 34px 1px;
+        padding: 25px 0 34px 1px;
         width: 535px;
-        word-spacing: 0px;
+        word-spacing: 0;
       }
     }
   }
