@@ -2,11 +2,10 @@
 import React from "react";
 import classes from "classnames";
 
-/*Assets*/
-import photoCover from "../../Assets/photo-cover.png";
-
 /*Styles*/
 import styles from "./users.module.scss";
+
+/*Components*/
 import User from "./components/User";
 
 const users = [

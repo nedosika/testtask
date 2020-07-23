@@ -11,11 +11,17 @@ import Footer from "components/Footer";
 
 /*Styles*/
 import styles from './App.module.scss';
+import SideBar from "../Header/components/SideBar/SideBar";
 
 const App = () => {
+    const [showModal, setShowModal] = React.useState(false);
+    const toggleSideBar = () => {
+        setShowModal((showModal) => (!showModal))
+    }
+
     return (
         <>
-            <Header className={styles.wrapper}/>
+            <Header className={styles.wrapper} toggleModal={toggleSideBar}/>
             <main className={styles.mainContainer}>
                 <Banner className={styles.wrapper}/>
                 <About className={styles.wrapper}/>
@@ -24,6 +30,7 @@ const App = () => {
             </main>
             <hr noshade="" size="1" color="#f4f4f4"/>
             <Footer/>
+            <SideBar isOpen={showModal} toggle={toggleSideBar}/>}
         </>
     );
 }
