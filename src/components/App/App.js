@@ -15,13 +15,14 @@ import SideBar from "../Header/components/SideBar/SideBar";
 
 const App = () => {
     const [showModal, setShowModal] = React.useState(false);
-    const toggleSideBar = () => {
-        setShowModal((showModal) => (!showModal))
+    const toggleSideBar = (isOpen = true) => {
+        console.log(isOpen)
+        setShowModal(isOpen);
     }
 
     return (
         <>
-            <Header className={styles.wrapper} toggleModal={toggleSideBar}/>
+            <Header className={styles.wrapper} openModal={toggleSideBar}/>
             <main className={styles.mainContainer}>
                 <Banner className={styles.wrapper}/>
                 <About className={styles.wrapper}/>

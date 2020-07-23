@@ -8,7 +8,7 @@ import styles from "./topBar.module.scss";
 /*Components*/
 import menuIcon from "Assets/menu icon.svg";
 
-const TopBar = ({onRequestOpenModal}) => {
+const TopBar = ({openModal}) => {
     const [current, setCurrent] = React.useState("banner");
 
     const handleClick = (e) => {
@@ -64,7 +64,7 @@ const TopBar = ({onRequestOpenModal}) => {
                     </Scrollchor>
                 </li>
             </ul>
-            <button onClick={onRequestOpenModal}><img src={menuIcon} alt="menu"/></button>
+            <button onClick={() => openModal()}><img src={menuIcon} alt="menu"/></button>
         </nav>
     );
 }

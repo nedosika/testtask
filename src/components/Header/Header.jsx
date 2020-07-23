@@ -10,7 +10,7 @@ import logo from "Assets/logo.svg";
 /*Components*/
 import TopBar from "./components/TopBar";
 
-const Header = ({className}) => {
+const Header = ({className, openModal}) => {
     return (
         <header className={classes(styles.wrapper, className)}>
             <div className={styles.logo}>
@@ -18,7 +18,7 @@ const Header = ({className}) => {
                     <img src={logo} alt={"logo"}/>
                 </a>
             </div>
-            <TopBar/>
+            <TopBar openModal={openModal}/>
         </header>
     );
 }

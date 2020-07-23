@@ -3,11 +3,15 @@ import classes from "classnames";
 import styles from "./sideBar.module.scss";
 
 const SideBar = ({isOpen, toggle}) => {
+    const closeModal = () => {
+        toggle(false);
+    }
+
     React.useEffect(() => {
-        document.addEventListener("click", toggle);
+        document.addEventListener("click", closeModal);
 
         return () => {
-            document.removeEventListener("click", toggle);
+            document.removeEventListener("click", closeModal);
         }
     }, []);
 
