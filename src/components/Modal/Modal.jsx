@@ -1,9 +1,8 @@
 import React from "react";
 
 import classes from "./styles.module.scss";
-import SideBar from "../Header/components/SideBar/SideBar";
 
-const Modal = ({isOpen, render, close}) => {
+const Modal = ({children, isOpen, close}) => {
     const ModalRef = React.createRef();
 
     const handleESC = event => {
@@ -11,7 +10,6 @@ const Modal = ({isOpen, render, close}) => {
             close();
         }
     };
-
 
     React.useEffect(() => {
         document.addEventListener("keydown", handleESC);
@@ -31,7 +29,7 @@ const Modal = ({isOpen, render, close}) => {
             onMouseDown={handleMouseDown}
             ref={ModalRef}
         >
-            <SideBar/>
+            {children}
         </div> :
         null
 }

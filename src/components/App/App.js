@@ -9,10 +9,10 @@ import Users from "components/Users";
 import Register from "components/Register";
 import Footer from "components/Footer";
 import Modal from "components/Modal";
+import SideBar from "components/Header/components/SideBar";
 
 /*Styles*/
 import styles from './App.module.scss';
-import SideBar from "../Header/components/SideBar/SideBar";
 
 const App = () => {
     const [showModal, setShowModal] = React.useState(false);
