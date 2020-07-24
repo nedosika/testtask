@@ -63,3 +63,14 @@ input {
     top: 60px;
   }
 }
+
+:global(.btn) {
+  padding: 11px 58px;
+  border-radius: 4px;
+  word-spacing: 1px;
+  background-color: #ef5b4c;
+}
+
+:global(.btn:hover) {
+  background-color: #d24335;
+}

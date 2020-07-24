@@ -21,7 +21,7 @@ const App = () => {
         <>
             <Header className={styles.wrapper} onOpenModal={() => ModalRef.current.open()}/>
             <main className={styles.mainContainer}>
-                <Banner className={styles.wrapper}/>
+                <Banner/>
                 <About className={styles.wrapper}/>
                 <Users className={styles.wrapper}/>
                 <Register/>
