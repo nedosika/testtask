@@ -5,7 +5,7 @@ import styles from "./SideBar.module.scss";
 /*assets*/
 import logo from "assets/logo.svg";
 
-const SideBar = () => {
+const SideBar = ({onApprove}) => {
     return (
         <aside className={styles.wrapper}>
             <header>
@@ -13,9 +13,9 @@ const SideBar = () => {
                     <img src={logo} alt={"logo"}/>
                 </a>
             </header>
-            <hr/>
+            <hr noshade="" size="1" color="#f4f4f4"/>
             <nav>
-                <ul>
+                <ul onClick={onApprove}>
                     <li>
                         <a href={"#s"}>About me</a>
                     </li>
@@ -33,7 +33,7 @@ const SideBar = () => {
                     </li>
                 </ul>
             </nav>
-            <hr/>
+            <hr noshade="" size="1" color="#f4f4f4"/>
             <nav>
                 <ul>
                     <li>
@@ -53,7 +53,7 @@ const SideBar = () => {
                     </li>
                 </ul>
             </nav>
-            <hr/>
+            <hr noshade="" size="1" color="#f4f4f4"/>
             <nav>
                 <ul>
                     <li>

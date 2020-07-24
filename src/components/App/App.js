@@ -26,7 +26,7 @@ const App = () => {
                 <Users className={styles.wrapper}/>
                 <Register/>
                 <Modal ref={ModalRef}>
-                    <SideBar/>
+                    <SideBar onApprove={() => ModalRef.current.close()}/>
                 </Modal>
             </main>
             <hr noshade="" size="1" color="#f4f4f4"/>

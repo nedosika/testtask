@@ -102,12 +102,12 @@ const Users = ({className}) => {
                 {
                     users.map((user, i) =>
                         i < count &&
-                        <>
-                            <User user={user} key={user.id}/>
+                        <React.Fragment key={user.id}>
+                            <User user={user} />
                             {
                                 (i + 1) % 3 === 0 && <div style={{width: "100%"}}/>
                             }
-                        </>
+                        </React.Fragment>
                     )
                 }
             </div>

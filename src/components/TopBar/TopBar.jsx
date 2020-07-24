@@ -1,11 +1,12 @@
 /*Libraries*/
 import React from "react";
-import Scrollchor from "react-scrollchor";
+import Scroll from "react-scrollchor";
+import classNames from "classnames"
 
 /*Styles*/
 import styles from "./topBar.module.scss";
 
-/*Components*/
+/*Assets*/
 import menuIcon from "assets/menu icon.svg";
 
 const TopBar = ({onOpenModal}) => {
@@ -19,49 +20,49 @@ const TopBar = ({onOpenModal}) => {
         <nav className={styles.wrapper}>
             <ul className={styles.menu} onClick={handleClick}>
                 <li className={styles.menuItem}>
-                    <Scrollchor
+                    <Scroll
                         to="#about"
                         data-action={"about"}
-                        className={current === "about" && styles.action}
+                        className={classNames({[styles.action]: current === "about"})}
                     >
                         About me
-                    </Scrollchor>
+                    </Scroll>
                 </li>
                 <li className={styles.menuItem}>
-                    <Scrollchor
+                    <Scroll
                         to="#register"
                         data-action={"relationships"}
-                        className={current === "relationships" && styles.action}
+                        className={classNames({[styles.action]: current === "relationships"})}
                     >
                         Relationships
-                    </Scrollchor>
+                    </Scroll>
                 </li>
                 <li className={styles.menuItem}>
-                    <Scrollchor
+                    <Scroll
                         to="#register"
                         data-action={"requirements"}
-                        className={current === "requirements" && styles.action}
+                        className={classNames({[styles.action]: current === "requirements"})}
                     >
                         Requirements
-                    </Scrollchor>
+                    </Scroll>
                 </li>
                 <li className={styles.menuItem}>
-                    <Scrollchor
+                    <Scroll
                         to="#users"
                         data-action={"users"}
-                        className={current === "users" && styles.action}
+                        className={classNames({[styles.action]: current === "users"})}
                     >
                         Users
-                    </Scrollchor>
+                    </Scroll>
                 </li>
                 <li className={styles.menuItem}>
-                    <Scrollchor
+                    <Scroll
                         to="#register"
                         data-action={"register"}
-                        className={current === "register" && styles.action}
+                        className={classNames({[styles.action]: current === "register"})}
                     >
                         Sign Up
-                    </Scrollchor>
+                    </Scroll>
                 </li>
             </ul>
             <button onClick={onOpenModal}><img src={menuIcon} alt="menu"/></button>

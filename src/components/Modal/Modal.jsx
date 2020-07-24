@@ -1,17 +1,11 @@
 import React from "react";
 
+/*Styles*/
 import classes from "./styles.module.scss";
 
 const Modal = ({children}, ref) => {
     const [open, setOpen] = React.useState(false);
-
     const OverlayRef = React.useRef({});
-
-    const handleESC = event => {
-        if (event.keyCode === 27) {
-            setOpen(false);
-        }
-    };
 
     React.useEffect(() => {
         document.addEventListener("keydown", handleESC);
@@ -20,9 +14,15 @@ const Modal = ({children}, ref) => {
     }, []);
 
     React.useImperativeHandle(ref, () => ({
-        open: () => setOpen(true)
+        open: () => setOpen(true),
+        close: () => setOpen(false)
     }));
 
+    const handleESC = event => {
+        if (event.keyCode === 27) {
+            setOpen(false);
+        }
+    };
 
     const handleMouseDown = ({target}) => {
         if (target === OverlayRef.current) {
