@@ -25,10 +25,10 @@ const App = () => {
                 <About className={styles.wrapper}/>
                 <Users className={styles.wrapper}/>
                 <Register/>
-                <Modal ref={ModalRef}>
-                    <SideBar onApprove={() => ModalRef.current.close()}/>
-                </Modal>
             </main>
+            <Modal ref={ModalRef}>
+                <SideBar onApprove={() => ModalRef.current.close()}/>
+            </Modal>
             <hr noshade="" size="1" color="#f4f4f4"/>
             <Footer/>
         </>

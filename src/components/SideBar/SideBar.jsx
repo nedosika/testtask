@@ -7,7 +7,7 @@ import logo from "assets/logo.svg";
 
 const SideBar = ({onApprove}) => {
     return (
-        <aside className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <header>
                 <a href={"#banner"}>
                     <img src={logo} alt={"logo"}/>
@@ -73,7 +73,7 @@ const SideBar = ({onApprove}) => {
                     </li>
                 </ul>
             </nav>
-        </aside>
+        </section>
     );
 }
 
