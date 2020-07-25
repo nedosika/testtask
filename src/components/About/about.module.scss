@@ -2,28 +2,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 861px;
 
-  h2 {
-    padding-top: 77px;
-    padding-bottom: 36px;
+  .title {
+    margin-top: 77px;
+    margin-bottom: 36px;
     font-size: 30px;
 
     letter-spacing: -0.3px;
     word-spacing: 0.5px;
-  }
-
-
-  button {
-    color: #ef5b4c;
-    margin-top: 9px;
-    font-weight: bold;
-    letter-spacing: 0.2px;
-    word-spacing: 0.1px;
-  }
-
-  button:hover {
-    color: #d24335;
   }
 
   .content {
@@ -31,36 +17,47 @@
     flex-direction: column;
     align-items: center;
 
-    img {
+    .aboutImg {
       width: 289px;
     }
 
-    .info {
+    .article {
       text-align: center;
 
-      h3 {
-        padding-top: 38px;
-        padding-bottom: 22px;
+      .articleTitle {
+        margin-top: 38px;
+        margin-bottom: 22px;
         font-size: 24px;
         text-align: center;
       }
 
-      p {
-        padding-bottom: 24px;
+      .text {
+        margin-bottom: 24px;
         word-spacing: -0.7px;
         text-align: justify;
       }
     }
   }
+
+  .btnSignUpNow {
+    color: #ef5b4c;
+    margin-top: 9px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    word-spacing: 0.1px;
+    margin-bottom: 78px;
+  }
+
+  .btnSignUpNow:hover {
+    color: #d24335;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    height: 656px;
-
-    h2 {
-      padding-top: 120px;
-      padding-bottom: 78px;
+    .title {
+      margin-top: 120px;
+      margin-bottom: 78px;
       font-size: 40px;
       letter-spacing: -0.5px;
       word-spacing: 0.5px;
@@ -71,24 +68,24 @@
       align-items: flex-start;
       justify-content: space-between;
 
-      img {
+      .aboutImg {
         width: 248px;
         padding-top: 1px;
       }
 
-      button {
-        padding: 0;
-      }
-
-      .info {
-        width: 430px;
-        padding-left: 30px;
+      .article {
+        width: 65%;
+        margin-left: 30px;
         text-align: left;
 
-        h3 {
-          padding-top: 0px;
+        .articleTitle {
+          margin-top: 0;
           text-align: left;
         }
+      }
+
+      .btnSignUpNow {
+        margin-bottom: 118px;
       }
     }
   }
@@ -96,25 +93,27 @@
 
 @media screen and (min-width: 1024px) {
   .wrapper {
-    height: 720px;
-
-    h2 {
-      padding-top: 165px;
+    .title {
+      margin-top: 165px;
       font-size: 50px;
       letter-spacing: -1px;
       word-spacing: 2.7px;
     }
 
     .content {
-      img {
+      .aboutImg {
         width: 340px;
         padding-left: 24px;
         padding-top: 5px;
       }
 
-      .info{
-        width: 100%;
-        padding: 4px 0 0 50px;
+      .article{
+        margin-left: 50px;
+        margin-top: 4px;
+      }
+
+      .btnSignUpNow {
+        margin-bottom: 157px;
       }
     }
   }
