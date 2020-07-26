@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
   margin-top: 78px;
   padding: 0 15px;
-  height: 824px;
 
   .title {
     font-size: 28.5px;
@@ -17,6 +17,7 @@
     margin: 21px 15px;
     text-align: center;
     line-height: 22px;
+
   }
 
   .registerForm {
@@ -45,7 +46,8 @@
     }
 
     span {
-      font-size: 10px;
+      font-size: 11px;
+      letter-spacing: -0.3px;
       color: #a5abb0;
     }
 
@@ -69,6 +71,7 @@
         letter-spacing: -0.8px;
         user-select: none;
         word-spacing: 0.5px;
+        margin-bottom: 14px;
 
         input {
           position: absolute;
@@ -159,10 +162,10 @@
       }
     }
 
-    .submitBtnWrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+    .btnSubmit {
+      margin: 20px auto;
+      padding: 11px 58px;
+      font-size: 16px;
     }
   }
 }
@@ -170,8 +173,6 @@
 @media screen and (min-width: 768px) {
   .wrapper {
     margin-top: 118px;
-    height: 906px;
-
     .title {
       font-size: 38px;
       word-spacing: 1px;
@@ -184,31 +185,42 @@
 
     .registerForm {
       width: 63%;
-      padding-left: 9px;
+      padding-left: 8px;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .wrapper {
-    height: 958px;
+
+    .title {
+      font-size: 50px;
+      line-height: 50px;
+      word-spacing: 0;
+      padding-left: 0;
+      letter-spacing: 0;
+    }
 
     .desc {
       width: 45%;
-      margin: 29px 0 21px 0;
+      margin: 20px 0;
       line-height: 24px;
     }
 
-    form {
+    .registerForm {
       width: 47%;
-      padding: 0;
+      padding-left: 0;
 
       label {
         margin-bottom: 20px;
 
-        span{
+        span {
           font-size: 12px;
         }
+      }
+
+      .btnSubmit {
+        margin: 21px auto;
       }
     }
   }

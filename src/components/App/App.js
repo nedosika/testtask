@@ -29,7 +29,6 @@ const App = () => {
             <Modal ref={ModalRef}>
                 <SideBar onApprove={() => ModalRef.current.close()}/>
             </Modal>
-            <hr noshade="" size="1" color="#f4f4f4"/>
             <Footer/>
         </>
     );

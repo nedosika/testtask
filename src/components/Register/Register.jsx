@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import styles from "./register.module.scss";
 
@@ -53,9 +54,9 @@ const Register = () => {
                         </div>
                     </label>
                 </div>
-                <div className={styles.submitBtnWrapper}>
-                    <button className={"btn"}>Sign up now</button>
-                </div>
+                {/*<div className={styles.submitBtnWrapper}>*/}
+                    <button className={classNames("btn", styles.btnSubmit)}>Sign up now</button>
+                {/*</div>*/}
             </form>
         </section>
     );
