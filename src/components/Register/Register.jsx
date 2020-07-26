@@ -5,12 +5,12 @@ import styles from "./register.module.scss";
 const Register = () => {
     return(
         <section className={styles.wrapper} id={"register"}>
-            <h2>Register to get a work</h2>
-            <p>
+            <h2 className={styles.title}>Register to get a work</h2>
+            <p className={styles.desc}>
                 Attention! After successful registration and alert, update the list of users in the block from the
                 top
             </p>
-            <form>
+            <form className={styles.registerForm}>
                 <label>Name
                     <input type={"text"} placeholder="Your name"/>
                 </label>
@@ -22,22 +22,22 @@ const Register = () => {
                     <span>Enter phone number in open format</span>
                 </label>
                 <div className={styles.inputPosition}>
-                    <h3>Select your position</h3>
+                    <h3 className={styles.positionTitle}>Select your position</h3>
                     <label className={styles.container}>
                         <input type="radio" name="position" value="Frontend developer"/>Frontend developer
-                        <span className={styles.checkMark}></span>
+                        <span className={styles.checkMark}/>
                     </label>
                     <label className={styles.container}>
                         <input type="radio" name="position" value="Backend developer"/>Backend developer
-                        <span className={styles.checkMark}></span>
+                        <span className={styles.checkMark}/>
                     </label>
                     <label className={styles.container}>
                         <input type="radio" name="position" value="Designer"/>Designer
-                        <span className={styles.checkMark}></span>
+                        <span className={styles.checkMark}/>
                     </label>
                     <label className={styles.container}>
                         <input type="radio" name="position" value="QA"/>QA
-                        <span className={styles.checkMark}></span>
+                        <span className={styles.checkMark}/>
                     </label>
                 </div>
                 <div className={styles.file}>
@@ -54,7 +54,7 @@ const Register = () => {
                     </label>
                 </div>
                 <div className={styles.submitBtnWrapper}>
-                    <button>Sign up now</button>
+                    <button className={"btn"}>Sign up now</button>
                 </div>
             </form>
         </section>
