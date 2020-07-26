@@ -1,6 +1,6 @@
 /*Libraries*/
 import React from "react";
-import classes from "classnames";
+import classNames from "classnames";
 
 /*Styles*/
 import styles from "./users.module.scss";
@@ -72,31 +72,29 @@ const users = [
         email: "elizabet.front@gmail.com",
         phone: "+380 50 678 03 24",
     }
-]
+];
 
 const Users = ({className}) => {
     const [count, setCount] = React.useState(3);
 
-    React.useEffect(() => {
-        window.addEventListener("resize", (event) => {
-            event.currentTarget.screen.width >= 768 && setCount(6);
-            event.currentTarget.screen.width < 768 && setCount(3);
-            //console.log(event.currentTarget.screen.width);
-        });
+    const handleScreenResize = (event) => {
+        event.currentTarget.screen.width >= 768 && setCount(6);
+        event.currentTarget.screen.width < 768 && setCount(3);
+    };
 
-        return () => window.removeEventListener("resize", (event) => {
-            event.currentTarget.screen.width >= 768 && setCount(6);
-            event.currentTarget.screen.width < 768 && setCount(3);
-        });
+    React.useEffect(() => {
+        window.addEventListener("resize", handleScreenResize);
+
+        return () => window.removeEventListener("resize", handleScreenResize)
     }, []);
 
     const handleShowMore = () => {
         setCount(count + 3);
-    }
+    };
 
     return(
-        <section className={classes(styles.wrapper, className)} id={"users"}>
-            <h2>Our cheerful users</h2>
+        <section className={classNames(styles.wrapper, className)} id={"users"}>
+            <h2 className={styles.title}>Our cheerful users</h2>
             <p className={styles.message}>Attention! Sorting users by registration date</p>
             <div className={styles.userList}>
                 {
@@ -112,10 +110,10 @@ const Users = ({className}) => {
                 }
             </div>
             {
-                count < users.length  && <button onClick={handleShowMore}>Show more</button>
+                count < users.length  && <button className={classNames("btn", styles.btnShowMore)} onClick={handleShowMore}>Show more</button>
             }
         </section>
     );
-}
+};
 
 export default Users;
