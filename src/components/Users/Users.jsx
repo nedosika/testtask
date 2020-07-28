@@ -8,7 +8,7 @@ import styles from "./users.module.scss";
 /*Components*/
 import User from "./components/User";
 
-const users = [
+const testData = [
     {
         id: 0,
         name: "Maximillian",
@@ -74,8 +74,13 @@ const users = [
     }
 ];
 
+const options = {
+    method: 'GET',
+}
+
 const Users = ({className}) => {
     const [count, setCount] = React.useState(3);
+    const [users, setUsers] = React.useState([]);
 
     const handleScreenResize = (event) => {
         event.currentTarget.screen.width >= 768 && setCount(6);
@@ -83,6 +88,14 @@ const Users = ({className}) => {
     };
 
     React.useEffect(() => {
+        fetch(
+            "https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=9",
+            {
+                method: 'GET',
+            })
+            .then((result) => result.json())
+            .then(data => setUsers(data.users));
+
         window.addEventListener("resize", handleScreenResize);
 
         return () => window.removeEventListener("resize", handleScreenResize)
