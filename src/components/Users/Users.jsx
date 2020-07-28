@@ -79,30 +79,42 @@ const options = {
 }
 
 const Users = ({className}) => {
-    const [count, setCount] = React.useState(3);
-    const [users, setUsers] = React.useState([]);
+    const [state, setState] = React.useState({
+        users: [],
+        count: 6,
+        total: 0
+    });
 
     const handleScreenResize = (event) => {
-        event.currentTarget.screen.width >= 768 && setCount(6);
-        event.currentTarget.screen.width < 768 && setCount(3);
+        event.currentTarget.screen.width >= 768 && loadUsers(6);
+        event.currentTarget.screen.width < 768 && loadUsers();
     };
 
-    React.useEffect(() => {
+    const loadUsers = (count = 3) => {
         fetch(
-            "https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=9",
+            `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${count}`,
             {
                 method: 'GET',
             })
             .then((result) => result.json())
-            .then(data => setUsers(data.users));
+            .then(data => {
+                setState({
+                    users: data.users,
+                    total: data.total_users,
+                    count: data.count
+                });
+            });
+    }
 
+    React.useEffect(() => {
+        loadUsers();
         window.addEventListener("resize", handleScreenResize);
 
         return () => window.removeEventListener("resize", handleScreenResize)
     }, []);
 
     const handleShowMore = () => {
-        setCount(count + 3);
+        loadUsers(state.count + 3);
     };
 
     return(
@@ -111,8 +123,8 @@ const Users = ({className}) => {
             <p className={styles.message}>Attention! Sorting users by registration date</p>
             <div className={styles.userList}>
                 {
-                    users.map((user, i) =>
-                        i < count &&
+                    state.users.map((user, i) =>
+                        i < state.count &&
                         <React.Fragment key={user.id}>
                             <User user={user} />
                             {
@@ -123,7 +135,7 @@ const Users = ({className}) => {
                 }
             </div>
             {
-                count < users.length  && <button className={classNames("btn", styles.btnShowMore)} onClick={handleShowMore}>Show more</button>
+                state.count < state.total  && <button className={classNames("btn", styles.btnShowMore)} onClick={handleShowMore}>Show more</button>
             }
         </section>
     );
