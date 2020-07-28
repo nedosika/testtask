@@ -25,8 +25,12 @@
     .userDetail{
       line-height: 24px;
       margin-left: -3px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+      .email{
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
