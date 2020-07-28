@@ -81,7 +81,7 @@ const options = {
 const Users = ({className}) => {
     const [state, setState] = React.useState({
         users: [],
-        count: 6,
+        count: 0,
         total: 0
     });
 
