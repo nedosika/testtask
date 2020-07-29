@@ -1,14 +1,20 @@
 import React from "react";
 import classNames from "classnames";
 
-import styles from "./register.module.scss";
+import userService from "services";
+
 import PositionItem from "./components/PositionItem";
 import UploadFile from "./components/UploadFile";
 
-const positions = ["Frontend developer", "Backend developer", "Designer", "QA"];
+import styles from "./register.module.scss";
 
 const Register = () => {
-    const [state, setState] = React.useState({});
+    const [state, setState] = React.useState({
+        photo: "",
+        positions: []
+    });
+
+    const [errors, setErrors] = React.useState([]);
 
     const handleChange = ({currentTarget: {name, value}}) => {
         setState(state => ({
@@ -17,10 +23,27 @@ const Register = () => {
         }))
     }
 
-    const handleSubmit = (event) =>{
+    React.useEffect(() => {
+        userService
+            .getPositions()
+            .then(({positions}) => setState((state) => ({
+                ...state,
+                positions
+            })));
+    }, [])
+
+    const handleSubmit = (event) => {
         event.preventDefault();
+        userService
+            .getToken()
+            .then(() => userService
+                .register(state)
+                .then(log => console.log(log))
+                .catch(errors => setErrors(errors.fails)))
         console.log(state)
     }
+
+    console.log(errors);
 
     return (
         <section className={styles.wrapper} id={"register"}>
@@ -31,7 +54,8 @@ const Register = () => {
             </p>
             <form className={styles.registerForm} onSubmit={handleSubmit}>
                 <label>Name
-                    <input type={"text"} placeholder="Your name" name="name" value={state.name} onChange={handleChange}/>
+                    <input type={"text"} placeholder="Your name" name="name" value={state.name}
+                           onChange={handleChange}/>
                 </label>
                 <label>Email
                     <input type={"email"} placeholder="Your email" name="email" onChange={handleChange}/>
@@ -42,9 +66,10 @@ const Register = () => {
                 </label>
                 <div className={styles.inputPosition}>
                     <h3 className={styles.positionTitle}>Select your position</h3>
-                    {positions.map((position) =>
-                        <PositionItem>
-                            <input type={"radio"} name={"position"} value={position} onChange={handleChange}/>{position}
+                    {state.positions.map((position) =>
+                        <PositionItem key={position.id}>
+                            <input type={"radio"} name={"position_id"} value={position.id}
+                                   onChange={handleChange}/>{position.name}
                         </PositionItem>
                     )}
                 </div>

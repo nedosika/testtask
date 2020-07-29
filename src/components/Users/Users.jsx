@@ -7,76 +7,7 @@ import styles from "./users.module.scss";
 
 /*Components*/
 import User from "./components/User";
-
-const testData = [
-    {
-        id: 0,
-        name: "Maximillian",
-        position: "Leading specialist of the Control Department",
-        email: "controldepartment@gmail",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 1,
-        name: "Adolph Blaine Charles David Earl Matthew Matthew",
-        position: "Contextual advertizing specialist",
-        email: "adolph.blainecharles@...",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 2,
-        name: "Elizabeth",
-        position: "Frontend developer",
-        email: "elizabet.front@gmail.com",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 3,
-        name: "Alexander",
-        position: "Leading specialist of the Control Department",
-        email: "controldepartment@gmail",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 4,
-        name: "Noah",
-        position: "Contextual advertizing specialist",
-        email: "adolph.blainecharles@...",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 5,
-        name: "Liamgrievescasey",
-        position: "Frontend developer",
-        email: "elizabet.front@gmail.com",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 6,
-        name: "Alexander",
-        position: "Leading specialist of the Control Department",
-        email: "controldepartment@gmail",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 7,
-        name: "Noah",
-        position: "Contextual advertizing specialist",
-        email: "adolph.blainecharles@...",
-        phone: "+380 50 678 03 24",
-    },
-    {
-        id: 8,
-        name: "Liamgrievescasey",
-        position: "Frontend developer",
-        email: "elizabet.front@gmail.com",
-        phone: "+380 50 678 03 24",
-    }
-];
-
-const options = {
-    method: 'GET',
-}
+import userService from "services";
 
 const Users = ({className}) => {
     const [state, setState] = React.useState({
@@ -91,19 +22,14 @@ const Users = ({className}) => {
     };
 
     const loadUsers = (count = 3) => {
-        fetch(
-            `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${count}`,
-            {
-                method: 'GET',
-            })
-            .then((result) => result.json())
-            .then(data => {
-                setState({
-                    users: data.users,
-                    total: data.total_users,
-                    count: data.count
-                });
+        userService.getUsers(count)
+        .then(({users, total_users: total, count}) => {
+            setState({
+                users,
+                total,
+                count
             });
+        });
     }
 
     React.useEffect(() => {
