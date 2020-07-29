@@ -9,15 +9,17 @@ import UploadFile from "./components/UploadFile";
 import styles from "./register.module.scss";
 
 const Register = () => {
-    const [state, setState] = React.useState({
+    const [user, setUser] = React.useState({
         photo: "",
-        positions: []
     });
+    const [positions, setPositions] = React.useState([]);
+    const [errors, setErrors] = React.useState({});
 
-    const [errors, setErrors] = React.useState([]);
+    const handleChange = (event) => {
+        event.preventDefault();
+        const {currentTarget: {name, value}} = event;
 
-    const handleChange = ({currentTarget: {name, value}}) => {
-        setState(state => ({
+        setUser(state => ({
             ...state,
             [name]: value
         }))
@@ -26,10 +28,7 @@ const Register = () => {
     React.useEffect(() => {
         userService
             .getPositions()
-            .then(({positions}) => setState((state) => ({
-                ...state,
-                positions
-            })));
+            .then(({positions}) => setPositions(positions));
     }, [])
 
     const handleSubmit = (event) => {
@@ -37,13 +36,10 @@ const Register = () => {
         userService
             .getToken()
             .then(() => userService
-                .register(state)
+                .register(user)
                 .then(log => console.log(log))
-                .catch(errors => setErrors(errors.fails)))
-        console.log(state)
+                .catch(setErrors))
     }
-
-    console.log(errors);
 
     return (
         <section className={styles.wrapper} id={"register"}>
@@ -54,26 +50,43 @@ const Register = () => {
             </p>
             <form className={styles.registerForm} onSubmit={handleSubmit}>
                 <label>Name
-                    <input type={"text"} placeholder="Your name" name="name" value={state.name}
-                           onChange={handleChange}/>
+                    <input
+                        type={"text"}
+                        placeholder="Your name"
+                        name="name"
+                        value={user.name}
+                        onChange={handleChange}
+                    />
                 </label>
                 <label>Email
-                    <input type={"email"} placeholder="Your email" name="email" onChange={handleChange}/>
+                    <input
+                        type={"email"}
+                        placeholder="Your email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                    />
                 </label>
                 <label>Phone number
-                    <input type={"phone"} placeholder="+380 XX XXX XX XX" name="phone" onChange={handleChange}/>
+                    <input
+                        type={"phone"}
+                        placeholder="+380 XX XXX XX XX"
+                        name="phone"
+                        value={user.phone}
+                        onChange={handleChange}
+                    />
                     <span>Enter phone number in open format</span>
                 </label>
                 <div className={styles.inputPosition}>
                     <h3 className={styles.positionTitle}>Select your position</h3>
-                    {state.positions.map((position) =>
+                    {positions.map((position) =>
                         <PositionItem key={position.id}>
                             <input type={"radio"} name={"position_id"} value={position.id}
                                    onChange={handleChange}/>{position.name}
                         </PositionItem>
                     )}
                 </div>
-                <UploadFile photo={state.photo}>
+                <UploadFile photo={user.photo}>
                     <input style={{display: "none"}} type="file" name="photo" onChange={handleChange}/>
                 </UploadFile>
                 <button className={classNames("btn", styles.btnSubmit)}>Sign up now</button>
