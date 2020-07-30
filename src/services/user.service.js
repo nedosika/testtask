@@ -1,7 +1,9 @@
-const register = (user) => {
+const register = async (user) => {
+    const {token} = await getToken();
+
     const requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Token': localStorage.getItem('token')},
+        headers: {'Content-Type': 'application/json', 'Token': token},
         body: JSON.stringify(user),
     };
 
@@ -25,7 +27,6 @@ const getToken = () =>{
 
     return fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token', requestOptions)
         .then(handleResponse)
-        .then((data) => localStorage.setItem('token', data.token))
 }
 
 const getPositions = () => {
@@ -35,6 +36,7 @@ const getPositions = () => {
 
     return fetch('https://frontend-test-assignment-api.abz.agency/api/v1/positions', requestOptions)
         .then(handleResponse)
+        .then((data) => data.positions)
 }
 
 const handleResponse = (response) => {
@@ -63,7 +65,6 @@ const handleResponse = (response) => {
 const userService = {
     register,
     getUsers,
-    getToken,
     getPositions
 }
 

@@ -26,30 +26,6 @@
     margin-top: 13px;
     font-size: 14px;
 
-    label {
-      margin-bottom: 20px;
-      word-spacing: 1px;
-      letter-spacing: 0.2px;
-    }
-
-    input {
-      width: 100%;
-      margin-top: 12px;
-      margin-bottom: 6px;
-      border: 1px solid #ced4da;
-      padding: 10px 10px 9px 12px;
-      box-sizing: border-box;
-      border-radius: 4px;
-      font-size: 15px;
-      letter-spacing: 0.2px;
-    }
-
-    span {
-      font-size: 11px;
-      letter-spacing: -0.3px;
-      color: #a5abb0;
-    }
-
     .inputPosition {
       display: flex;
       flex-direction: column;
@@ -113,10 +89,6 @@
 
       label {
         margin-bottom: 20px;
-
-        span {
-          font-size: 12px;
-        }
       }
 
       .btnSubmit {

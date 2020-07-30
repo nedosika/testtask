@@ -5,8 +5,10 @@ import userService from "services";
 
 import PositionItem from "./components/PositionItem";
 import UploadFile from "./components/UploadFile";
+import Input from "./components/Input";
 
 import styles from "./register.module.scss";
+
 
 const Register = () => {
     const [user, setUser] = React.useState({
@@ -16,7 +18,6 @@ const Register = () => {
     const [errors, setErrors] = React.useState({});
 
     const handleChange = (event) => {
-        event.preventDefault();
         const {currentTarget: {name, value}} = event;
 
         setUser(state => ({
@@ -25,20 +26,19 @@ const Register = () => {
         }))
     }
 
+    console.log(errors)
+
     React.useEffect(() => {
         userService
             .getPositions()
-            .then(({positions}) => setPositions(positions));
+            .then(setPositions);
     }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault();
         userService
-            .getToken()
-            .then(() => userService
-                .register(user)
-                .then(log => console.log(log))
-                .catch(setErrors))
+            .register(user)
+            .catch(setErrors)
     }
 
     return (
@@ -49,34 +49,30 @@ const Register = () => {
                 top
             </p>
             <form className={styles.registerForm} onSubmit={handleSubmit}>
-                <label>Name
-                    <input
-                        type={"text"}
-                        placeholder="Your name"
-                        name="name"
-                        value={user.name}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>Email
-                    <input
-                        type={"email"}
-                        placeholder="Your email"
-                        name="email"
-                        value={user.email}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>Phone number
-                    <input
-                        type={"phone"}
-                        placeholder="+380 XX XXX XX XX"
-                        name="phone"
-                        value={user.phone}
-                        onChange={handleChange}
-                    />
-                    <span>Enter phone number in open format</span>
-                </label>
+                <Input
+                    label="Name"
+                    placeholder="Your name"
+                    name="name"
+                    value={user.name}
+                    handleChange={handleChange}
+                    error={errors && errors.fails && errors.fails.name}
+                />
+                <Input
+                    label="Email"
+                    placeholder="Your email"
+                    name="email"
+                    value={user.email}
+                    handleChange={handleChange}
+                    error={errors && errors.fails && errors.fails.email}
+                />
+                <Input
+                    label="Phone number"
+                    placeholder="+380 XX XXX XX XX"
+                    name="name"
+                    value={user.phone}
+                    handleChange={handleChange}
+                    error={errors && errors.fails && errors.fails.phone}
+                />
                 <div className={styles.inputPosition}>
                     <h3 className={styles.positionTitle}>Select your position</h3>
                     {positions.map((position) =>

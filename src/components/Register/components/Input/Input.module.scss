@@ -1,0 +1,34 @@
+.wrapper {
+  margin-bottom: 20px;
+  word-spacing: 1px;
+  letter-spacing: 0.2px;
+
+  .item {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px 10px 9px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+
+  .errorMessage {
+    font-size: 12px;
+    letter-spacing: -0.3px;
+    color: #ef5b4c;
+  }
+
+  .error{
+    border-color: #ef5b4c;
+    color: #ef5b4c;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    margin-bottom: 20px;
+  }
+}
