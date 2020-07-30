@@ -68,7 +68,7 @@ const Register = () => {
                 <Input
                     label="Phone number"
                     placeholder="+380 XX XXX XX XX"
-                    name="name"
+                    name="phone"
                     value={user.phone}
                     handleChange={handleChange}
                     error={errors && errors.fails && errors.fails.phone}
