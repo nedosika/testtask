@@ -14,11 +14,18 @@
     font-size: 15px;
     letter-spacing: 0.2px;
     outline-style: none;
-
   }
 
   .item:focus{
     border-color: #007bff;
+  }
+
+  .item::-webkit-input-placeholder{
+    color: #b2b9c0;
+  }
+
+  .item::-moz-placeholder{
+    color: #b2b9c0;
   }
 
   .errorMessage {

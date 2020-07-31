@@ -11,11 +11,11 @@ import styles from "./register.module.scss";
 
 
 const Register = () => {
-    const [user, setUser] = React.useState({
-        photo: "",
-    });
+    const [user, setUser] = React.useState({});
     const [positions, setPositions] = React.useState([]);
     const [errors, setErrors] = React.useState({});
+
+    const fileInput = React.useRef();
 
     const handleChange = (event) => {
         const {currentTarget: {name, value}} = event;
@@ -24,6 +24,13 @@ const Register = () => {
             ...state,
             [name]: value
         }))
+    }
+
+    const handleFileSelected = () => {
+        setUser(state => ({
+            ...state,
+            photo: fileInput.current.files[0]
+        }));
     }
 
     console.log(errors)
@@ -55,7 +62,7 @@ const Register = () => {
                     name="name"
                     value={user.name}
                     handleChange={handleChange}
-                    error={errors && errors.fails && errors.fails.name}
+                    errors={errors}
                 />
                 <Input
                     label="Email"
@@ -63,7 +70,7 @@ const Register = () => {
                     name="email"
                     value={user.email}
                     handleChange={handleChange}
-                    error={errors && errors.fails && errors.fails.email}
+                    errors={errors}
                 />
                 <Input
                     label="Phone number"
@@ -71,7 +78,7 @@ const Register = () => {
                     name="phone"
                     value={user.phone}
                     handleChange={handleChange}
-                    error={errors && errors.fails && errors.fails.phone}
+                    errors={errors}
                 />
                 <div className={styles.inputPosition}>
                     <h3 className={styles.positionTitle}>Select your position</h3>
@@ -82,8 +89,13 @@ const Register = () => {
                         </PositionItem>
                     )}
                 </div>
-                <UploadFile photo={user.photo}>
-                    <input style={{display: "none"}} type="file" name="photo" onChange={handleChange}/>
+                <UploadFile photo={user.photo && user.photo.name} errors={errors}>
+                    <input
+                        style={{display: "none"}}
+                        type="file"
+                        name="photo"
+                        onChange={handleFileSelected}
+                        ref={fileInput}/>
                 </UploadFile>
                 <button className={classNames("btn", styles.btnSubmit)}>Sign up now</button>
             </form>
