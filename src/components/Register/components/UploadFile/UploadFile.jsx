@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import styles from "./UploadFile.module.scss";
 
-const UploadFile = ({children, photo, errors}) =>
+const UploadFile = ({children, photo, error}) =>
     <div className={styles.wrapper}>
         <label className={styles.fileLabel}>Photo
             {children}
@@ -15,8 +15,8 @@ const UploadFile = ({children, photo, errors}) =>
                     Browse
                 </span>
             </div>
+            {error && <span className={styles.errorMessage}>{error}</span>}
         </label>
-        {errors && <span className={styles.errorMessage}>{errors.fails && errors.fails.photo}</span>}
     </div>
 
 export default UploadFile;

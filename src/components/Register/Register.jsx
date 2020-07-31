@@ -33,7 +33,7 @@ const Register = () => {
         }));
     }
 
-    console.log(errors)
+    // console.log(errors)
 
     React.useEffect(() => {
         userService
@@ -45,6 +45,7 @@ const Register = () => {
         event.preventDefault();
         userService
             .register(user)
+            .then((data) => console.log(data))
             .catch(setErrors)
     }
 
@@ -62,7 +63,7 @@ const Register = () => {
                     name="name"
                     value={user.name}
                     handleChange={handleChange}
-                    errors={errors}
+                    error={errors && errors.fails && errors.fails.name}
                 />
                 <Input
                     label="Email"
@@ -70,7 +71,7 @@ const Register = () => {
                     name="email"
                     value={user.email}
                     handleChange={handleChange}
-                    errors={errors}
+                    error={errors && errors.fails && errors.fails.email}
                 />
                 <Input
                     label="Phone number"
@@ -78,7 +79,7 @@ const Register = () => {
                     name="phone"
                     value={user.phone}
                     handleChange={handleChange}
-                    errors={errors}
+                    error={errors && errors.fails && errors.fails.phone}
                 />
                 <div className={styles.inputPosition}>
                     <h3 className={styles.positionTitle}>Select your position</h3>
@@ -89,13 +90,14 @@ const Register = () => {
                         </PositionItem>
                     )}
                 </div>
-                <UploadFile photo={user.photo && user.photo.name} errors={errors}>
+                <UploadFile photo={user.photo && user.photo.name} error={errors && errors.fails && errors.fails.photo}>
                     <input
                         style={{display: "none"}}
                         type="file"
                         name="photo"
                         onChange={handleFileSelected}
-                        ref={fileInput}/>
+                        ref={fileInput}
+                    />
                 </UploadFile>
                 <button className={classNames("btn", styles.btnSubmit)}>Sign up now</button>
             </form>

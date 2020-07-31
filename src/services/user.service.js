@@ -1,11 +1,17 @@
 const register = async (user) => {
     const {token} = await getToken();
+    const formData = new FormData();
+    for ( let key in user ) {
+        formData.append(key, user[key]);
+    }
 
     const requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Token': token},
-        body: JSON.stringify(user),
+        headers: {'Token': token},
+        body: formData,
     };
+
+    console.log(user);
 
     return fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users`, requestOptions)
         .then(handleResponse)
@@ -56,6 +62,9 @@ const handleResponse = (response) => {
             }
 
             const error = data || response.statusText;
+
+            console.log(error);
+
             return Promise.reject(error);
         }
         return data;
