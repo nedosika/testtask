@@ -8,7 +8,8 @@ import UploadFile from "./components/UploadFile";
 import Input from "./components/Input";
 
 import styles from "./register.module.scss";
-
+import Modal from "../Modal";
+import Dialog from "./components/Dialog";
 
 const Register = () => {
     const [user, setUser] = React.useState({});
@@ -16,6 +17,7 @@ const Register = () => {
     const [errors, setErrors] = React.useState({});
 
     const fileInput = React.useRef();
+    const ModalRef = React.useRef({});
 
     const handleChange = (event) => {
         const {currentTarget: {name, value}} = event;
@@ -33,8 +35,6 @@ const Register = () => {
         }));
     }
 
-    // console.log(errors)
-
     React.useEffect(() => {
         userService
             .getPositions()
@@ -43,10 +43,16 @@ const Register = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        userService
-            .register(user)
-            .then((data) => console.log(data))
-            .catch(setErrors)
+        // userService
+        //     .register(user)
+        //     .then((data) => {
+        //         setUser({});
+        //         setErrors({});
+        //         ModalRef.current.open();
+        //         console.log(data);
+        //     })
+        //     .catch(setErrors)
+                ModalRef.current.open();
     }
 
     return (
@@ -101,6 +107,9 @@ const Register = () => {
                 </UploadFile>
                 <button className={classNames("btn", styles.btnSubmit)}>Sign up now</button>
             </form>
+            <Modal ref={ModalRef}>
+                <Dialog onClose={ModalRef.current.close}/>
+            </Modal>
         </section>
     );
 }

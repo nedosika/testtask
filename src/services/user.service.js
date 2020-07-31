@@ -50,20 +50,18 @@ const handleResponse = (response) => {
         const data = text && JSON.parse(text);
         if (!response.ok) {
             if (data.status === 401) {
-                // auto logout if 401 response returned from api
-                //logout();
-                //location.reload(true);
+                console.log("The token expired.");
+            }
+
+            if (response.status === 409){
+                console.log("User with this phone or email already exist");
             }
 
             if (response.status === 422) {
-                // auto logout if 401 response returned from api
-                //logout();
-                //location.reload(true);
+                console.log("Error:", data.fails)
             }
 
             const error = data || response.statusText;
-
-            console.log(error);
 
             return Promise.reject(error);
         }

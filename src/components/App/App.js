@@ -27,7 +27,7 @@ const App = () => {
                 <Register/>
             </main>
             <Modal ref={ModalRef}>
-                <SideBar onApprove={() => ModalRef.current.close()}/>
+                <SideBar onApprove={ModalRef.current.close}/>
             </Modal>
             <Footer/>
         </>
